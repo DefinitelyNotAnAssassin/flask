@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %} shop {% endblock %}
+
+{% block content %}
+
+{% for i in item %}
+<div class = "card mt -4">
+
+{% if i[0] == "Chicken Egg" %}
+	<h4>{{i[0]}}</h4>
+	<p> <strong> PHP {{i[3]}} / pc </strong> </p>
+	
+{% else %}
+	<h4>{{i[0]}}</h4>
+	<p><strong>PHP {{i[3]}} / kg </strong></p>
+
+{% endif %}
+
+
+
+</div>
+
+
+	<span>
+		<label for {{i[0]}} qty> Quantity </label>
+		<input 
+		type = "number" 
+		id = "{{i[0]}} qty"
+		min = 1
+		max = 100
+		> </input>
+	</span>
+	
+	
+ <button 
+ 	type = "submit"
+ 	 class="btn btn-primary" 
+ 	 name = {{i[0]}}
+ 	 onclick = "submit_item();" 	
+ >Add to cart </button>
+
+</form>
+
+{% endfor %}
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+	function submit_item(){
+	
+	
+	var chayoteqty = document.getElementById("Chayote qty");
+	var cabbageqty = document.getElementById("Cabbage qty");	
+	
+	var entry = {
+	
+	chayoteqty:  chayoteqty.value,
+	cabbageqty: cabbageqty.value	
+	};
+	
+fetch('http://127.0.0.1:5000/send', {
+
+method: "POST",
+credentials: "include",
+body: JSON.stringify(entry),
+cache: 'no-cache',
+headers: new Headers({
+	"content-type": "application/json"
+})
+
+
+
+
+})
+	
+	
+}
+</script>
+
+
+
+{% endblock %}

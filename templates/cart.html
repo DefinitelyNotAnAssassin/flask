@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %} Cart {% endblock %}
+{% block content %}
+
+<p> Cart </p>
+
+<div class = "card">
+{% for i in cart %}
+
+{% if i == "Chayote" %}
+
+<h3> {{i}}   x {{req["chayoteqty"]}}</h3>
+
+{% endif %}
+
+
+{% if i == "Cabbage" %}
+
+<h3> {{i}}  x {{req["cabbageqty"]}}</h3>
+
+{% endif %}
+
+
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
