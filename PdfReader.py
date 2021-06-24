@@ -6,7 +6,7 @@ import sqlite3
 conn = sqlite3.connect('products.db')
 
 
-file = open('Price-Monitoring-June-10-2021.pdf', 'rb')
+file = open('Price-Monitoring-June-15-2021.pdf', 'rb')
 fileReader = pdf.PdfFileReader(file)
 page = fileReader.getPage(0)
 textPage = page.extractText()
@@ -67,7 +67,7 @@ dtf = pd.DataFrame(high_vegetable)
 high_vegetableDF = pd.DataFrame(
 [ [ high_vegetable[32], high_vegetable[34], high_vegetable[35], high_vegetable[36] ],
 [ high_vegetable[1], high_vegetable[5], high_vegetable[6], high_vegetable[7] ],
-[ high_vegetable[11], high_vegetable[12], high_vegetable[13] ],
+[ high_vegetable[8], high_vegetable[11], high_vegetable[12], high_vegetable[13] ],
 [ high_vegetable[14], high_vegetable[17], high_vegetable[18], high_vegetable[19] ],
 [ high_vegetable[20], high_vegetable[23], high_vegetable[24], high_vegetable[25] ],
 [ high_vegetable[26], high_vegetable[29], high_vegetable[30], high_vegetable[31] ]],
@@ -79,13 +79,13 @@ low_vegetableDF.columns.str.split
 df.columns.str.replace(' ', '') 
 
 
-print(high_vegetableDF)
-print(df)
-print(low_vegetableDF)
+#print(high_vegetableDF)
+#print(df)
+#print(low_vegetableDF)
 
 print(df.columns)
 #Do Not Touch!!
-#high_vegetableDF.to_sql(name="produkto", con = conn, if_exists = 'replace', index = False)
+##high_vegetableDF.to_sql(name="produkto", con = conn, if_exists = 'replace', index = False)
 #low_vegetableDF.to_sql(name="produkto", con = conn, if_exists = 'append', index = False)
 #df.to_sql(name="produkto", con = conn, if_exists = 'append', index = False)
 file.close()
