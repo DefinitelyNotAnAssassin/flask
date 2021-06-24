@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %} Lowland Vegetable {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+{% endblock %}
+
+{% set  a = {'count': 0} %}
+
+
+{% block content %}
+
+{% for i in item %}
+
+{% if (a['count'] % 2) == 0 %}
+<div class = "row form-group">
+{% endif %}
+
+
+	<div class = "col">
+		<div class = "shadow card text-center">
+		{% if i[0] == "Cabbage" %} <img class = "card-img-top" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1pPeiulmEFl7oxq29WFvanP1WOhltJO2mMg&usqp=CAU"> {% endif %}
+		{% if i[0] == "Carrots" %} <img class = "card-img-top" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzWBQKnVgPIRZU8AYEkkMjVZJzAlEGHnmSWg&usqp=CAU"> {% endif %}	
+		{% if i[0] == "White Potato" %} <img class = "card-img-top" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ8nlcKyRMAaIpAqpScAhn4F4nbzrrqoK7ng&usqp=CAU"> {% endif %}
+		{% if i[0] == "Habitchuelas" %} <img class = "card-img-top" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCwqZ0X61aT7l6hEzdfP_OzMMUvavxvwKwAw&usqp=CAU"> {% endif %}
+		{% if i[0] == "Pechay" %} <img class = "card-img-top" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZc0QjhsnDrWzvmiYBzUqrcGTfW2oPQcEdSQ&usqp=CAU"> {% endif %}
+		{% if i[0] == "Chayote" %} <img class = "card-img-top" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGFBuxBNv6JdeX5pbjvjD5PVJTFykN2P01mg&usqp=CAU">{% endif %}
+			<div class = "card-body">
+				<h4 class = "card-title"> {{i[0]}} </h4>
+					<h6 class ="card-text"> {{i[3]}} / kg </h6>
+					<form action = "/send" method = "post">
+					<label for = "{{i[0]}}qty"> 
+					<input type = "number" id = "{{i[0]}}qty" name = "{{i[0]}}" class = "form-control" min = 0 max = 100 value = 0></input>
+					<button type = "submit" class = "btn btn-primary"> Add to cart</button>		
+			</div>
+		</div>
+	</div>
+<p hidden>{{a.update({'count': a.count + 1})}}</p>
+
+
+{% if (a['count'] % 2) == 0 %}
+</div>
+{% endif %}
+
+
+
+
+
+
+
+{% endfor %} 
+</form>
+
+
+{% endblock %}

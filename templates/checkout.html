@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+{% set total = {'total': 0} %}
+{% for i in cart %}
+
+{% if i == "Chayote" %}
+
+<h3> {{i}} x {{req["Chayoteqty"]}} = {{ price[0] * req["Chayoteqty"] }} </h3>
+<p hidden>{{total.update({'total':  total.total + price[0] * req["Chayoteqty"]})}}</p>
+
+{% endif %}
+
+
+
+{% if i == "Cabbage" %}
+
+<h3> {{i}} x {{req["Cabbageqty"]}} = {{ price[1] * req["Cabbageqty"] }} </h3>
+<p hidden>{{total.update({'total':  total.total + price[1] * req["Cabbageqty"]})}}</p>
+{% endif %}
+
+
+{% if i == "Carrots" %}
+
+<h3> {{i}} x {{req["Carrotsqty"]}} = {{ price[2] * req["Carrotsqty"] }} </h3>
+<p hidden>{{total.update({'total':  total.total + price[2] * req["Carrotsqty"]})}} </p>
+{% endif %}
+
+
+
+
+
+
+{% if i == "Habitchuelas" %}
+
+<h3> {{i}} x {{req["Habitchuelasqty"]}} = {{ price[3] * req["Habitchuelasqty"] }} </h3>
+<p hidden>{{total.update({'total':  total.total + price[3] * req["Habitchuelasqty"]})}} </p>
+{% endif %}
+
+
+
+{% if i == "White Potato" %}
+
+<h3> {{i}} x {{req["White Potatoqty"]}} = {{ price[4] * req["White Potatoqty"] }} </h3>
+<p hidden>{{total.update({'total':  total.total + price[4] * req["White Potatoqty"]})}} </p>
+{% endif %}
+{% endfor %}
+
+<h3> Total: {{total["total"]}} </h3>
+
+{% endblock %}

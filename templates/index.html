@@ -1,6 +1,114 @@
-{% extends "base.html" %}
-{% block title %} Home {% endblock %}
-{% block content %}
 
-<h1> Home </h1>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'cover.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'scroll.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+
+{% endblock %}
+{% block content %}
+		  <div class="wrapper">
+		    <div class="static-txt">Welcome to</div>
+		    <ul class="dynamic-txts">
+		      <li><span>E - Palengke</span></li>
+		      <li><span>the future.</span></li>
+		      <li><span>your market.</span></li>
+		    </ul>
+		  </div>
+		 </div>
+	 
+ <!--  Use cards to reveal options  -->
+ 
+<section>
+    <div class = "form-group row">
+    	<div class = "col">
+  	  	<div class="container reveal">
+       		 <div class="card text-center">
+        		<h2 class = "card-title">Your Title</h2>
+        			<div class="text-card">
+			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			        </div>
+       		</div>
+            </div>
+        </div>
+<!-- Connect -->
+    	<div class = "col">
+  	  	<div class="container reveal">
+       		 <div class="card text-center">
+        		<h2 class = "card-title">Your Title</h2>
+        			<div class="text-card">
+			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			        </div>
+       		</div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    
+<section>
+    <div class = "row">
+    	<div class = "col">
+  	  	<div class="container reveal">
+       		 <div class="card text-center">
+        		<h2 class = "card-title">Your Title</h2>
+        			<div class="text-card">
+			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			        </div>
+       		</div>
+            </div>
+        </div>
+<!-- Connect -->
+    	<div class = "col">
+  	  	<div class="container reveal">
+       		 <div class="card text-center">
+        		<h2 class = "card-title">Your Title</h2>
+        			<div class="text-card">
+			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			        </div>
+       		</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+
+{% endblock %}
+
+
+
+{% block script %}
+
+
+    <script type="text/javascript">
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal');
+
+      for(var i = 0; i < reveals.length; i++){
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+        else{
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+    
+   </script>
+    
 {% endblock %}

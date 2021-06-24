@@ -1,29 +1,68 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 {% block title %} Cart {% endblock %}
-{% block content %}
+ 
 
-<p> Cart </p>
+{% block head %}
 
-<div class = "card">
-{% for i in cart %}
+<style>
+	h3 {font-family:Times New Roman;}
+	
+	.text {
+	white-space: nowrap;
+	}
+	
+	label{font-family:Times New Roman;}
+	
+	.form-control{
+	max-width: 5rem;
+	}
+	
+	.btn {
+	max-width: 8rem;
+	
+	}
+	
+	.number {
+	display: inline;
+	max-height: 1rem;
+	max-width: 3rem;	
+	}
 
-{% if i == "Chayote" %}
-
-<h3> {{i}}   x {{req["chayoteqty"]}}</h3>
-
-{% endif %}
-
-
-{% if i == "Cabbage" %}
-
-<h3> {{i}}  x {{req["cabbageqty"]}}</h3>
-
-{% endif %}
-
-
-
-</div>
-
-{% endfor %}
+</style>
 
 {% endblock %}
+
+
+{% block content %}
+
+
+<div class = "shadow card">
+{% for i in cart %} 
+<form action = "/update" method = "post">
+  <div class="form-group row d-flex justify-content-center">
+    <label for="{{i}}form" class="col-auto col-form-label">{{i}} </label>
+    <div class="col-auto">
+      <input type="number" 
+      class="form-control"
+       id="{{i}}form" 
+       name = "{{i}}"
+       min=0
+       max = 100
+       value = {{req["{}qty".format(i)]}}>
+       </div>
+       <div class = "col-auto">
+        <button class = "col-sm-2 btn btn-primary" type = "submit">Update </button>
+       </input>
+      </div> 
+  </div>
+</form>
+	
+{% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+

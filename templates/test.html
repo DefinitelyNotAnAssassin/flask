@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %} Test {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class = "container">
+
+<div class="row">
+  <div class="col-lg-3">
+    <div class = "shadow card text-center">
+    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6yUPbJHijIZazJbGSbIZrG4HyMKlpS-KK4w&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Highland Vegetable</h5>
+        <p class="card-text">Description . . .</p>
+        <a href="shop/highland" class="btn btn-primary">Shop</a>
+       </div>
+      </div>
+   </div>
+   
+  <div class="col-lg-3">
+    <div class = "shadow card text-center">
+    <img class="card-img-top" src ="https://www.probinsyamart.com/files/product_photo/photo/125/Bundles%20Revised%203%20April%203-03%20%281%29.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Lowland Vegetable</h5>
+        <p class="card-text">Description . . .</p>
+        <a href="shop/lowland" class="btn btn-primary">Shop</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+<div class = w-100>
+	<div class="row">
+
+  <div class="col-lg-3">
+    <div class = "shadow card text-center">
+    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN8_ZTMuYCAFW49cv3sszImSX4M1yN78sdFQ&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Livestock & Poultry</h5>
+        <p class="card-text">Description . . .</p>
+        <a href="shop/livestock" class="btn btn-primary">Shop</a>
+      </div>
+    </div>
+    </div>
+  </div>
+   
+
+</div>
+
+{% endblock %}

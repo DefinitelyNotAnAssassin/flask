@@ -6,6 +6,9 @@
 {% for i in item %}
 <div class = "card mt -4">
 
+
+<form action = "/send" method = "post">
+
 {% if i[0] == "Chicken Egg" %}
 	<h4>{{i[0]}}</h4>
 	<p> <strong> PHP {{i[3]}} / pc </strong> </p>
@@ -20,34 +23,47 @@
 
 </div>
 
-
 	<span>
+		
+	
+	
 		<label for {{i[0]}} qty> Quantity </label>
 		<input 
+		class = "form-field"
 		type = "number" 
 		id = "{{i[0]}} qty"
-		min = 1
+		name = "{{i[0]}}"
+		min = 0
 		max = 100
+		value = 0
 		> </input>
+		
+		
 	</span>
 	
-	
- <button 
+	<button 
  	type = "submit"
  	 class="btn btn-primary" 
- 	 name = {{i[0]}}
- 	 onclick = "submit_item();" 	
  >Add to cart </button>
+ 
 
-</form>
+
 
 {% endfor %}
 
+</form> 
 {% endblock %}
 
 {% block script %}
 
 <script>
+
+
+
+
+
+
+
 	function submit_item(){
 	
 	
@@ -56,7 +72,7 @@
 	
 	var entry = {
 	
-	chayoteqty:  chayoteqty.value,
+	chayoteqty:  chayoteqty.value, 
 	cabbageqty: cabbageqty.value	
 	};
 	
@@ -69,13 +85,7 @@ cache: 'no-cache',
 headers: new Headers({
 	"content-type": "application/json"
 })
-
-
-
-
-})
-	
-	
+})	
 }
 </script>
 
