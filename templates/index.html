@@ -2,9 +2,9 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block head %}
-  <link rel="stylesheet" href="{{ url_for('static', filename = 'cover.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename = 'scroll.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'scroll.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'cover.css') }}">
 
 {% endblock %}
 {% block content %}
@@ -19,69 +19,121 @@
 		 </div>
 	 
  <!--  Use cards to reveal options  -->
+ <!-- Use class = "reveal" to make it appear -->
+ <!-- Use self-made class = "text-title" to toggle text -->
  
-<section>
-    <div class = "form-group row">
-    	<div class = "col">
-  	  	<div class="container reveal">
-       		 <div class="card text-center">
-        		<h2 class = "card-title">Your Title</h2>
-        			<div class="text-card">
-			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			        </div>
-       		</div>
-            </div>
-        </div>
-<!-- Connect -->
-    	<div class = "col">
-  	  	<div class="container reveal">
-       		 <div class="card text-center">
-        		<h2 class = "card-title">Your Title</h2>
-        			<div class="text-card">
-			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			        </div>
-       		</div>
-            </div>
-        </div>
-    </div>
-</section>
-    
-    
-<section>
-    <div class = "row">
-    	<div class = "col">
-  	  	<div class="container reveal">
-       		 <div class="card text-center">
-        		<h2 class = "card-title">Your Title</h2>
-        			<div class="text-card">
-			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			        </div>
-       		</div>
-            </div>
-        </div>
-<!-- Connect -->
-    	<div class = "col">
-  	  	<div class="container reveal">
-       		 <div class="card text-center">
-        		<h2 class = "card-title">Your Title</h2>
-        			<div class="text-card">
-			            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			        </div>
-       		</div>
-            </div>
-        </div>
-    </div>
-</section>
+ <div class = "text-title">
+ <h3 class = "reveal text-title"> Services </h3>
+ </div>
+
+<div class = "float-right">
+	<div class = "col reveal float-right">
+		<div class = "card">
+			<div class = "card-body">
+				<div class = "card-title">
+				<h3> This is supposedly  a title </h3>
+					<div class = "card-text">
+					<p> This should contain some content here </p>
+					<a href="shop/highland" class="btn btn-primary">Shop</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
-    
-<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-<p style = "opacity:0;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+	<div class = "col float-right reveal">
+		<div class = "card">
+			<div class = "card-body">
+				<div class = "card-title">
+				<h3> This is supposedly a title </h3>
+					<div class = "card-text">
+					<p> This should contain some content here </p>
+					<a href="shop/highland" class="btn btn-primary">Shop</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+<div class = "container form-group my-5">
+<div class = "col float-right reveal my-5">
+</div>
+</div>
+
+
+
+
+<div class = "col float-right reveal">
+		<div class = "card">
+			<div class = "card-body">
+				<div class = "card-title">
+				<h3> This is supposedly a title </h3>
+					<div class = "card-text">
+					<p> This should contain some content here </p>
+					<a href="shop/highland" class="btn btn-primary">Shop</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+
+
+<div class = "container reveal my-5">
+<div class = "col float-right my-5">
+</div>
+</div>
+
+<div class = "container reveal my-5">
+<div class = "col float-right my-5">
+</div>
+</div>
+
+
+<div class = "float-right reveal">
+	<div class = "col-lg-1 float-right reveal">
+		<div class = "card">
+			<div class = "card-body">
+				<div class = "card-title">
+				<h3> This is supposedly a title </h3>
+					<div class = "card-text">
+					<p> This should contain some content here </p>
+					<a href="shop/highland" class="btn btn-primary">Shop</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+<div class = "container form-group my-5">
+<div class = "col float-right reveal my-5">
+</div>
+</div>
+
+<div class = "container form-group my-5">
+<div class = "col float-right reveal my-5">
+</div>
+</div>
+
+
+<div class = "container reveal my-5">
+<div class = "col float-right  my-5">
+</div>
+</div>
+
 
 
 {% endblock %}
+
+
+
 
 
 

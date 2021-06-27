@@ -4,6 +4,8 @@
 
 {% block head %}
 
+<script src = "{{ url_for('static', filename = "cart.js") }}"></script>
+
 <style>
 	h3 {font-family:Times New Roman;}
 	
@@ -49,10 +51,11 @@
        min=0
        max = 100
        value = {{req["{}qty".format(i)]}}>
+       </input>
        </div>
        <div class = "col-auto">
-        <button class = "col-sm-2 btn btn-primary" type = "submit">Update </button>
-       </input>
+        <button  type = "submit" class = "btn btn-primary">Update </button>
+   	 <button type = "button" class = "btn btn-danger" onclick = "delete_parent(this, {{i[0]}})">Remove</button>   
       </div> 
   </div>
 </form>
@@ -61,6 +64,10 @@
 </div>
 {% endblock %}
 
+{% block script %}
+
+
+{% endblock %}
 
 
 
